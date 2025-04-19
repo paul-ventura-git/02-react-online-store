@@ -25,15 +25,15 @@ export default function Gallery() {
 
       <Outlet></Outlet>
 
-      <div className="container">
+      <div className="container">        
         <Row>
-          <Col sm={4} md={4} lg={4}>
+          <Col sm={3} md={3} lg={3}>
+            <h5>Filtrar por:</h5>
             <ProductFilter></ProductFilter>
           </Col>
-          <Col sm={8} md={8} lg={8}>
+          <Col sm={9} md={9} lg={9}>
             <div className="album py-5 bg-body-tertiary">
               <div className="container">
-
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> {/* INICIO del Grid de la cuadrícula */}
                   {
                     gallery.map((item) => {
@@ -44,7 +44,7 @@ export default function Gallery() {
                             <img 
                               className="bd-placeholder-img card-img-top" 
                               width="100%" 
-                              height="350"
+                              height="300"
                               src={item.thumbnail} 
                             >
                             </img>
@@ -64,18 +64,12 @@ export default function Gallery() {
                       )
                     })
                   }
-
                 </div> {/* FIN del Grid de la cuadrícula */}
               </div>
             </div>
           </Col>
         </Row>
       </div>
-
-      
-
-
-
     </main>
   )
 }
