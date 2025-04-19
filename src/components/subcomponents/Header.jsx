@@ -8,7 +8,7 @@ import ShoppingCart from '../ShoppingCart'
 
 export default function Header() {
   const checkout = () => {
-    alert('Proceeding to checkout...')
+    
   }
   const clear = () => {
     alert('Clearing cart...')

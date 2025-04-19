@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function ShoppingCart({ item, setItem, checkout, clear}) {
   return (
-    <>
-      
+    <>      
       <div className="offcanvas-header">
           <h5 className="offcanvas-title" id="offcanvasExampleLabel">Shopping Cart</h5>
           <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -41,11 +40,10 @@ export default function ShoppingCart({ item, setItem, checkout, clear}) {
             Total (US$) : <strong>0.00</strong>
           </div>
           <div className='d-flex justify-content-between'>
-            <Link to="/checkout"><button onClick={checkout} className='btn btn-primary mt-3'>Proceed to Checkout</button></Link>
+            <Link to="/checkout"><button onClick={checkout} className='btn btn-primary mt-3' data-bs-dismiss="offcanvas">Proceed to Checkout</button></Link>
             <button onClick={clear} className='btn btn-danger mt-3'>Clear</button>
           </div>
         </div>
-
     </>
   )
 }

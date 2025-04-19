@@ -1,7 +1,7 @@
 export default function CheckoutForm() {
   return (
     <>
-      <main className="container">
+      <main className="container px-4 py-5" style={{ maxWidth: "800px" }}>
         <div className="py-5 text-center">
           <h2>Checkout form</h2>
           <p className="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
