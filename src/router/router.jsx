@@ -36,6 +36,7 @@ import Gallery from '../pages/Gallery';
 import galleryLoader from '../services/loaders/galleryLoader';
 import GalleryDetails from '../components/GalleryDetails';
 import { galleryDetailsLoader } from '../services/loaders/galleryDetailsLoader';
+import CheckoutForm from '../components/CheckoutForm';
 
 export const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ export const router = createBrowserRouter([
       {
         path: '/cart',
         element: <ShoppingCart />
+      },
+      {
+        path: "/checkout",
+        element: <CheckoutForm />
       }
     ],
   },

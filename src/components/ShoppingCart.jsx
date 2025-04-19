@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars */
+import { Link } from 'react-router-dom'
+
 export default function ShoppingCart({ item, setItem, checkout, clear}) {
   return (
     <>
@@ -39,7 +41,7 @@ export default function ShoppingCart({ item, setItem, checkout, clear}) {
             Total (US$) : <strong>0.00</strong>
           </div>
           <div className='d-flex justify-content-between'>
-            <button onClick={checkout} className='btn btn-primary mt-3'>Proceed to Checkout</button>
+            <Link to="/checkout"><button onClick={checkout} className='btn btn-primary mt-3'>Proceed to Checkout</button></Link>
             <button onClick={clear} className='btn btn-danger mt-3'>Clear</button>
           </div>
         </div>
