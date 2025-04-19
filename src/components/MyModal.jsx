@@ -14,7 +14,7 @@ export default function MyModal({ children, ...props }) {
 
   return (
     <>
-      <Modal show={show} onHide={handleClose} size="xl" centered backdrop="static" keyboard={false}>
+      <Modal show={show} onHide={handleClose} size={props.modalSize} centered backdrop="static" keyboard={false}>
         <Modal.Header closeButton >
           <Modal.Title style={{paddingLeft: "1rem", paddingRight: "1rem"}}>{props.myTitle}</Modal.Title>
         </Modal.Header>

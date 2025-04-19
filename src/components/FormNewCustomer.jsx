@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 
 export default function FormNewCustomer() {
   return (
-    <MyModal myTitle="Nuevo Cliente">
+    <MyModal myTitle="Nuevo Cliente" modalSize="lg">
       <MainForm method="post">
         <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label column sm={3}>Nombre:</Form.Label>

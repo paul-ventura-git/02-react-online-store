@@ -49,7 +49,7 @@ export default function GalleryDetails() {
     );
   }
   return (  
-    <MyModal myTitle="Detalles del Producto" size="lg">
+    <MyModal myTitle="Detalles del Producto" modalSize="xl">
 
       <div className="card mb-3 d-flex align-items-center mb-3">
         <div className="row g-0">
