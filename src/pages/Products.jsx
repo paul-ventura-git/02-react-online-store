@@ -35,7 +35,7 @@ export default function Products() {
             </Link>
           </div>
           <div class="col-4">
-            {/* 🔍 Input de búsqueda automática */}
+            {/* Input de búsqueda automática */}
             <input
               type="text"
               placeholder="Buscar productos..."
