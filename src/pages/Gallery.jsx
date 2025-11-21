@@ -44,7 +44,7 @@ export default function Gallery() {
                             <img 
                               className="bd-placeholder-img card-img-top" 
                               width="100%" 
-                              height="300"
+                              height="auto"
                               src={item.thumbnail} 
                             >
                             </img>

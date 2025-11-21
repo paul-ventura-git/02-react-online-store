@@ -1,42 +1,52 @@
-import { createBrowserRouter } from 'react-router-dom'
-import Layout from '../components/Layout';
-import Home from '../pages/Home';
-import { productsLoader } from '../services/loaders/productsLoader';
-import FormNewProduct from '../components/FormNewProduct';
-import newProductAction from '../services/actions/newProductAction';
-import ProductDetails from '../components/ProductDetails';
-import { productDetailsLoader } from '../services/loaders/productDetailsLoader';
-import Products from '../pages/Products';
-import Dashboard from '../pages/Dashboard';
-import Customers from '../pages/Customers';
-import Login from '../pages/Login';
-import NotFound from '../pages/NotFound'
-import FormNewCustomer from '../components/FormNewCustomer';
-import CustomerDetails from '../components/CustomerDetails';
+import { createBrowserRouter } from 'react-router-dom';
 
-import { customersLoader } from '../services/loaders/customersLoader';
-import newCustomerAction from '../services/actions/newCustomerAction';
-import { customerDetailsLoader } from '../services/loaders/customerDetailsLoader';
-import FormEditCustomer from '../components/FormEditCustomer';
-import DeleteCustomer from '../components/DeleteCustomer';
-import { customerEditLoader } from '../services/loaders/customerEditLoader';
-import editCustomerAction from '../services/actions/editCustomerAction';
-import deleteCustomerAction from '../services/actions/deleteCustomerAction';
-import { deleteCustomerLoader } from '../services/loaders/deleteCustomerLoader';
+// Barrel imports 👇
+import {
+  Layout,
+  FormNewProduct,
+  ProductDetails,
+  FormNewCustomer,
+  CustomerDetails,
+  FormEditCustomer,
+  DeleteCustomer,
+  FormEditProduct,
+  DeleteProduct,
+  ShoppingCart,
+  GalleryDetails,
+  CheckoutForm
+} from '../components';
 
-import FormEditProduct from '../components/FormEditProduct';
-import { productEditLoader } from '../services/loaders/productEditLoader';
-import editProductAction from '../services/actions/editProductAction';
-import DeleteProduct from '../components/DeleteProduct';
-import { deleteProductLoader } from '../services/loaders/deleteProductLoader';
-import deleteProductAction from '../services/actions/deleteProductAction';
-import ShoppingCart from '../components/ShoppingCart';
+import {
+  Home,
+  Products,
+  Dashboard,
+  Customers,
+  Login,
+  NotFound,
+  Gallery
+} from '../pages';
 
-import Gallery from '../pages/Gallery';
-import galleryLoader from '../services/loaders/galleryLoader';
-import GalleryDetails from '../components/GalleryDetails';
-import { galleryDetailsLoader } from '../services/loaders/galleryDetailsLoader';
-import CheckoutForm from '../components/CheckoutForm';
+import {
+  productsLoader,
+  productDetailsLoader,
+  customersLoader,
+  customerDetailsLoader,
+  customerEditLoader,
+  deleteCustomerLoader,
+  productEditLoader,
+  deleteProductLoader,
+  galleryLoader,
+  galleryDetailsLoader
+} from '../services/loaders';
+
+import {
+  newProductAction,
+  newCustomerAction,
+  editCustomerAction,
+  deleteCustomerAction,
+  editProductAction,
+  deleteProductAction
+} from '../services/actions';
 
 export const router = createBrowserRouter([
   {

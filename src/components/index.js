@@ -1,0 +1,12 @@
+export { default as Layout } from './Layout';
+export { default as FormNewProduct } from './FormNewProduct';
+export { default as ProductDetails } from './ProductDetails';
+export { default as FormNewCustomer } from './FormNewCustomer';
+export { default as CustomerDetails } from './CustomerDetails';
+export { default as FormEditCustomer } from './FormEditCustomer';
+export { default as DeleteCustomer } from './DeleteCustomer';
+export { default as FormEditProduct } from './FormEditProduct';
+export { default as DeleteProduct } from './DeleteProduct';
+export { default as ShoppingCart } from './ShoppingCart';
+export { default as GalleryDetails } from './GalleryDetails';
+export { default as CheckoutForm } from './CheckoutForm';
