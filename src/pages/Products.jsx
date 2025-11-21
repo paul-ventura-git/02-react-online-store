@@ -1,38 +1,58 @@
 import { Outlet, Link, useLoaderData } from "react-router-dom";
-
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-
 import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
 import { AiOutlineFileAdd } from "react-icons/ai";
-
 import styles from '../assets/css/Products.module.css'
+import { useState } from "react";
 
 export default function Products() {
   const products = useLoaderData();
+
+  // Estado para búsqueda automática
+  const [search, setSearch] = useState("");
+
+  // Filtrado en tiempo real
+  const filteredProducts = products.filter(item =>
+    item.title.toLowerCase().includes(search.toLowerCase()) ||
+    item.description.toLowerCase().includes(search.toLowerCase()) ||
+    item.category.toLowerCase().includes(search.toLowerCase()) ||
+    item.brand.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="my-container">
       <Outlet></Outlet>
       <div className="container">
-        <br></br>
-        <br></br>
+        <br />
+        <br />
         <h1>Productos</h1>
-        <br></br>
-        
-        <Link className="nav-link" to="/products/create-product">
-          <Button variant="warning"><AiOutlineFileAdd />Nuevo Producto</Button>
-        </Link>        
-
-        <br></br>
-        <br></br>
+        <br />
+        <div class="row">
+          <div class="col">
+            <Link className="nav-link" to="/products/create-product">
+              <Button variant="warning"><AiOutlineFileAdd /> Nuevo Producto</Button>
+            </Link>
+          </div>
+          <div class="col-4">
+            {/* 🔍 Input de búsqueda automática */}
+            <input
+              type="text"
+              placeholder="Buscar productos..."
+              className="form-control mb-3"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+        </div>
         <Table responsive className="table-hover table-striped table-responsive">
           <thead className="table-dark">
             <tr>
-              <th>Nombre</th>              
+              <th>Nombre</th>
               <th>Descripción</th>
               <th>Categoría</th>
               <th>Precio</th>
-              <th>% de Descuento</th>
+              <th>% Descuento</th>
               <th>Rating</th>
               <th>Stock</th>
               <th>Marca</th>
@@ -40,11 +60,13 @@ export default function Products() {
               <th>Acciones</th>
             </tr>
           </thead>
+
           <tbody>
             {
-              products.map((item)=>{
-                let editarProducto = 'edit-product/'+item.id;
-                let eliminarProducto = 'delete-product/'+item.id;
+              filteredProducts.map(item => {
+                let editarProducto = 'edit-product/' + item.id;
+                let eliminarProducto = 'delete-product/' + item.id;
+
                 return (
                   <tr key={item.id}>
                     <td>{item.title}</td>
@@ -65,9 +87,10 @@ export default function Products() {
                 )
               })
             }
-
           </tbody>
         </Table>
+
+        {/* paginación dummy */}
         <nav aria-label="Page navigation example">
           <ul className="pagination">
             <li className="page-item"><a className="page-link" href="#">Previous</a></li>
@@ -77,6 +100,7 @@ export default function Products() {
             <li className="page-item"><a className="page-link" href="#">Next</a></li>
           </ul>
         </nav>
+
       </div>
     </div>
   )
